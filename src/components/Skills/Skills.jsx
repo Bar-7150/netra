@@ -5,57 +5,51 @@ const Skills = () => {
 
   const cyberSecTools = [
     { tool: 'Nmap', bg:'/nmap2.png' },
-    { tool: 'Hydra', bg:'hydra.png'},
-    { tool: 'Wireshark',bg:'wireshark2.png' },
-    { tool: 'Burp Suite' ,bg:'burpsuit.png'},
-    { tool: 'Zmap',bg:'zmap.png' },
-    { tool: 'Metasploit',bg:'metasploit2.png' },
-    { tool: 'OWASP ZAP',bg:'oswapZap.png' },
-    { tool: 'Zhon The Ripper',bg:'metasploit2.png' },
-    { tool: 'OWASP ZAP',bg:'oswapZap.png' }
+    { tool: 'Hydra', bg:'/hydra.png'},
+    { tool: 'Wireshark', bg:'/wireshark2.png' },
+    { tool: 'Burp Suite', bg:'/burpsuit.png'},
+    { tool: 'Zmap', bg:'/zmap.png' },
+    { tool: 'Metasploit', bg:'/metasploit2.png' },
+    { tool: 'OWASP ZAP', bg:'/oswapZap.png' },
+    { tool: 'John the Ripper', bg:'/metasploit2.png' }
   ]
 
   const frontend = [
-    { tool: 'React.js',bg:'react.png' },
-    { tool: 'GSAP',bg:'gsap.png'},
-    { tool: 'Three.js',bg:'threeJS.png' },
-    { tool: 'JavaScript',bg:'javaScript.png' },
-    { tool: 'Tailwind',bg:'tailwindCSS.png' },
-    { tool: 'Bootstrap',bg:'boostrap.png' }
+    { tool: 'React.js', bg:'/react.png' },
+    { tool: 'GSAP', bg:'/gsap.png'},
+    { tool: 'Three.js', bg:'/threeJS.png' },
+    { tool: 'JavaScript', bg:'/javaScript.png' },
+    { tool: 'Tailwind', bg:'/tailwindCSS.png' },
+    { tool: 'Bootstrap', bg:'/boostrap.png' }
   ]
 
   const backend = [
-    { tool: 'Node.js',bg:'node2.png' },
-    { tool: 'Express.js',bg:'express.png' },
-    // { tool: 'FastAPI',bg:'fastAPI.png' }
+    { tool: 'Node.js', bg:'/node2.png' },
+    { tool: 'Express.js', bg:'/express.png' },
+    { tool: 'FastAPI', bg:'/fastAPI.png' }
   ]
 
   const database = [
-    { tool: 'MongoDB',bg:'mongodb2.png' },
-    { tool: 'MySQL',bg:'mySQL2.png' },
-    { tool: 'PostgreSQL',bg:'pSQL.png' },
-    { tool: 'Supabase',bg:'sapabase.png' },
+    { tool: 'MongoDB', bg:'/mongodb2.png' },
+    { tool: 'MySQL', bg:'/mySQL2.png' },
+    { tool: 'PostgreSQL', bg:'/pSQL.png' },
+    { tool: 'Supabase', bg:'/sapabase.png' },
   ]
 
   const aiMlTools = [
-    { tool: 'TensorFlow' },
-    { tool: 'PyTorch' },
-    { tool: 'scikit-learn' },
-    // { tool: 'Keras' },
-    { tool: 'Hugging Face' },
-    // { tool: 'OpenCV' }
+    { tool: 'TensorFlow', bg:'https://cdn.simpleicons.org/tensorflow/ff3366' },
+    { tool: 'PyTorch', bg:'https://cdn.simpleicons.org/pytorch/ff3366' },
+    { tool: 'scikit-learn', bg:'https://cdn.simpleicons.org/scikitlearn/ff3366' },
+    { tool: 'Hugging Face', bg:'https://cdn.simpleicons.org/huggingface/ff3366' }
   ]
 
   const iotTools = [
-    { tool: 'Arduino' },
-    // { tool: 'Raspberry Pi' },
-    { tool: 'ESP32' },
+    { tool: 'Arduino', bg:'https://cdn.simpleicons.org/arduino/00ffcc' },
+    { tool: 'ESP32', bg:'https://cdn.simpleicons.org/espressif/00ffcc' },
   ]
 
   const others = [
-    { tool: 'Blender',bg:'blender.png' },
-    // { tool: 'SVG',bg:'figma.png' },
-    // { tool: 'Color Theory' ,bg:'express.png'}
+    { tool: 'Blender', bg:'/blender.png' }
   ]
 
   const renderToolPills = (list) =>
@@ -68,15 +62,19 @@ const Skills = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.32, ease: 'easeOut' }}
       >
-        {item.tool}
+        <span className="tool-icon-wrap">
+          <img className="tool-icon" src={item.bg} alt="" loading="lazy" />
+        </span>
+        <span className="tool-name">{item.tool}</span>
+        <span className="tool-signal" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
       </motion.span>
     ))
 
   return (
     <section className="skills-dashboard">
       <div className="skills-header">
-        <p className="skills-section-label">// skills_matrix.db</p>
-        <h1>Skills</h1>
+        <p className="skills-section-label">// skills_matrix.db <span>SYS.STATUS: ONLINE</span></p>
+        <h1>Skills<span className="title-caret">_</span></h1>
         <p className="skills-description">
           A dashboard-style view of tools and technologies across security, web, AI/ML, and IoT.
         </p>
