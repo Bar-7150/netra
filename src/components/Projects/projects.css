@@ -1,0 +1,689 @@
+/* ═══════════════════════════════════════
+   PROJECTS SECTION — HACKER TERMINAL
+   ═══════════════════════════════════════ */
+
+.projectsContainer {
+    color: #ffe6ed;
+    padding-bottom: 40px;
+    background-color: transparent;
+}
+
+/* ── Section Header ── */
+.projectsSectionLabel {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(0, 255, 204, 0.5);
+    text-align: center;
+    margin: 60px 0 8px;
+    text-transform: uppercase;
+}
+
+.projectsSectionTitle {
+    color: #ff3366;
+    margin: 0 0 12px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 0 14px rgba(255, 51, 102, 0.5), 0 0 30px rgba(255, 51, 102, 0.2);
+    font-family: "JetBrains Mono", monospace;
+    text-align: center;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+/* Animated gradient underline */
+.projectsSectionTitle::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff3366, #00ffcc, transparent);
+    margin: 12px auto 0;
+    animation: linePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes linePulse {
+    0%, 100% { opacity: 0.5; width: 80px; }
+    50%       { opacity: 1;   width: 180px; }
+}
+
+/* ── Loading bar below title ── */
+.projectsLoadingBar {
+    width: 220px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 204, 0.15);
+    border-radius: 2px;
+    margin: 18px auto 32px;
+    overflow: hidden;
+    position: relative;
+}
+
+.projectsLoadingBar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -60%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+    animation: loadingSweep 2.2s ease-in-out infinite;
+}
+
+@keyframes loadingSweep {
+    0%   { left: -60%; }
+    100% { left: 110%; }
+}
+
+/* ── Category Tabs ── */
+.projectsTabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+    padding: 0 20px;
+}
+
+.projectsTab {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: rgba(255, 255, 255, 0.45);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.28s ease;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    text-transform: uppercase;
+}
+
+.projectsTab:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.projectsTab.active {
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.tabIcon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* ── Projects scroll container ── */
+.projectsWrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.projectsInner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    overflow-x: scroll;
+    position: relative;
+    left: 8vw;
+    padding: 20px 0 20px 4px;
+    scroll-behavior: smooth;
+    height: 450px;
+}
+
+.projectsInner::-webkit-scrollbar {
+    display: none;
+}
+
+/* ── Project Card ── */
+.project {
+    position: relative;
+    flex: 0 0 520px;
+    height: 300px;
+    width: 520px;
+    border-radius: 6px;
+    background-color: rgba(5, 0, 12, 0.85);
+    border: 1px solid rgba(0, 255, 204, 0.15);
+    box-shadow: 0 0 0 0 rgba(0, 255, 204, 0), 0 20px 45px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Thin accent stripe at top of each card */
+.projectAccentStripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    opacity: 0.7;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+}
+
+.project:hover .projectAccentStripe {
+    opacity: 1;
+}
+
+/* Corner brackets — top-left */
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 18px; height: 18px;
+    border-top: 2px solid rgba(0, 255, 204, 0.55);
+    border-left: 2px solid rgba(0, 255, 204, 0.55);
+    border-radius: 2px 0 0 0;
+    z-index: 10;
+    transition: all 0.4s ease;
+}
+
+/* Corner brackets — bottom-right */
+.project::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 18px; height: 18px;
+    border-bottom: 2px solid rgba(255, 51, 102, 0.5);
+    border-right: 2px solid rgba(255, 51, 102, 0.5);
+    border-radius: 0 0 2px 0;
+    z-index: 10;
+    transition: all 0.4s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 255, 204, 0.5);
+    box-shadow:
+        0 0 0 1px rgba(0, 255, 204, 0.12),
+        0 20px 50px rgba(0, 255, 204, 0.12),
+        0 0 60px rgba(0, 255, 204, 0.05),
+        -4px 0 20px rgba(255, 51, 102, 0.1);
+}
+
+.project:hover::before { width: 32px; height: 32px; border-color: #00ffcc; box-shadow: 0 0 8px rgba(0,255,204,0.5); }
+.project:hover::after  { width: 32px; height: 32px; border-color: #ff3366; box-shadow: 0 0 8px rgba(255,51,102,0.5); }
+
+/* ── Scan sweep on hover ── */
+.project .projectScanLine {
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.7), transparent);
+    z-index: 20;
+    pointer-events: none;
+}
+
+.project:hover .projectScanLine {
+    animation: scanSweep 0.9s ease forwards;
+}
+
+@keyframes scanSweep {
+    from { top: 0;    left: 0; opacity: 1; }
+    to   { top: 100%; left: 0; opacity: 0; }
+}
+
+/* ── Card Overlay ── */
+.projectCyberOverlay {
+    position: absolute;
+    inset: 0;
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(180deg, rgba(5,0,12,0.15) 0%, rgba(5,0,12,0.8) 70%, rgba(5,0,12,0.95) 100%);
+    box-sizing: border-box;
+}
+
+/* ── Top row ── */
+.projectTopRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.projectNodeTag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.projectIdTag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    color: rgba(0, 255, 204, 0.35);
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+}
+
+.projectStatusLabel {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    background: rgba(0, 255, 204, 0.06);
+    border: 1px solid rgba(0, 255, 204, 0.18);
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+
+.pulseDotGreen {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: blinkDot 1.5s ease-in-out infinite;
+}
+
+@keyframes blinkDot {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50%       { opacity: 1;   transform: scale(1.2); }
+}
+
+/* ── Tag pills ── */
+.projectTagsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.projectTag {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    border-radius: 2px;
+    color: rgba(0, 255, 204, 0.75);
+    text-transform: uppercase;
+}
+
+/* ── Bottom hover content ── */
+.projectHoverContent {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.38s ease;
+}
+
+.project:hover .projectHoverContent {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.projectDescTerminal {
+    font-size: 12px;
+    color: rgba(255, 204, 221, 0.85);
+    margin-bottom: 16px;
+    line-height: 1.6;
+    font-family: "JetBrains Mono", monospace;
+    border-left: 2px solid rgba(0, 255, 204, 0.3);
+    padding-left: 10px;
+}
+
+.projectDescTerminal::before {
+    content: '$ ';
+    color: #00ffcc;
+    font-weight: bold;
+}
+
+/* ── Button row ── */
+.projectBtnRow {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.projectEnterBtn {
+    background: transparent;
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+    font-family: "JetBrains Mono", monospace;
+    padding: 7px 16px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.projectEnterBtn:hover {
+    box-shadow: 0 0 18px rgba(0, 255, 204, 0.55);
+    transform: translateY(-1px);
+}
+
+.projectEnterBtn.secondary {
+    border-color: rgba(255, 51, 102, 0.5);
+    color: #ff3366;
+}
+
+.projectEnterBtn.secondary:hover {
+    background: #ff3366;
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 51, 102, 0.55);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .projectsInner { left: 4vw; }
+    .project { flex: 0 0 420px; width: 420px; }
+}
+
+@media (max-width: 768px) {
+    .projectsContainer { width: 100vw; }
+    .projectsSectionTitle { font-size: 1.6rem; }
+    .projectsTabs { gap: 8px; }
+    .projectsTab { font-size: 10px; padding: 6px 12px; }
+    .projectsInner { left: 0; padding: 20px 16px; gap: 16px; height: 400px; }
+    .project { flex: 0 0 300px; width: 300px; height: 260px; }
+    .projectHoverContent { opacity: 1; transform: none; }
+    .projectDescTerminal { font-size: 11px; margin-bottom: 10px; }
+    .projectsLoadingBar { margin-bottom: 16px; }
+}
+
+@media (max-width: 480px) {
+    .projectsSectionLabel { font-size: 10px; letter-spacing: 2px; margin: 40px 0 6px; }
+    .projectsSectionTitle { font-size: 1.3rem; letter-spacing: 2px; }
+    .projectsTabs { gap: 6px; padding: 0 10px; }
+    .projectsTab { font-size: 9px; padding: 5px 10px; }
+    .projectsInner { height: 370px; gap: 14px; padding: 16px 14px; }
+    .project { flex: 0 0 270px; width: 270px; height: 240px; }
+    .projectNodeTag { font-size: 11px; }
+    .projectEnterBtn { padding: 6px 12px; font-size: 9px; }
+}
+
+/* ── WIP/Locked Projects Overlay Styles ── */
+
+.tabWipLock {
+    font-size: 10px;
+    margin-left: 4px;
+    opacity: 0.7;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+.pulseDotOrange {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    animation: blinkDot 1.5s ease-in-out infinite;
+}
+
+/* Custom warning hover colors for WIP cards */
+.project.wip:hover {
+    border-color: rgba(251, 146, 60, 0.4);
+    box-shadow:
+        0 0 0 1px rgba(251, 146, 60, 0.1),
+        0 20px 50px rgba(251, 146, 60, 0.1),
+        0 0 60px rgba(251, 146, 60, 0.05);
+}
+
+.projectWipOverlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(13, 2, 6, 0.94) 0%, rgba(5, 0, 12, 0.96) 100%);
+    backdrop-filter: blur(5px);
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+
+/* Striped warning indicator on top and bottom of WIP overlay */
+.projectWipOverlay::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #ff3366,
+        #ff3366 10px,
+        #fb923c 10px,
+        #fb923c 20px
+    );
+    opacity: 0.8;
+}
+
+.wipOverlayContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    padding: 24px;
+}
+
+.wipLockIcon {
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 2px;
+    animation: pulseLock 2.5s ease-in-out infinite;
+}
+
+.wipStatusText {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    animation: textFlicker 3s linear infinite;
+}
+
+.wipDetailsText {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    color: rgba(255, 230, 238, 0.4);
+    letter-spacing: 1px;
+}
+
+@keyframes pulseLock {
+    0%, 100% { transform: scale(1); filter: brightness(1); }
+    50% { transform: scale(1.08); filter: brightness(1.2); }
+}
+
+@keyframes textFlicker {
+    0%, 100% { opacity: 1; }
+    92% { opacity: 1; }
+    93% { opacity: 0.6; }
+    94% { opacity: 0.95; }
+    95% { opacity: 0.3; }
+    96% { opacity: 1; }
+}
+
+/* ── Secure Password Decryption Modal Styles ── */
+
+.projectPasswordModal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.passwordModalOverlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(5, 0, 12, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.passwordModalContent {
+    position: relative;
+    width: 92%;
+    max-width: 460px;
+    background: linear-gradient(135deg, rgba(13, 2, 6, 0.96) 0%, rgba(5, 0, 12, 0.98) 100%);
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 26px;
+    z-index: 10;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.modalCloseBtn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 230, 238, 0.4);
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.2s ease;
+    padding: 0 4px;
+}
+
+.modalCloseBtn:hover {
+    color: #ff3366;
+    transform: scale(1.1);
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.modalDesc {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    color: rgba(255, 230, 238, 0.75);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.inputWrapper {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    padding: 10px 14px;
+    gap: 10px;
+    transition: border-color 0.25s ease;
+}
+
+.inputWrapper:focus-within {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.inputPrompt {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modalInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    letter-spacing: 3px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.modalInput::placeholder {
+    letter-spacing: 1.5px;
+    color: rgba(255, 230, 238, 0.25);
+}
+
+.modalInput.error {
+    color: #ff3366;
+    text-shadow: 0 0 8px rgba(255, 51, 102, 0.4);
+}
+
+.modalErrorMsg {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: #ff3366;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: errorShake 0.4s ease forwards;
+}
+
+.modalActionRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.modalSubmitBtn {
+    background: transparent;
+    border: 1px solid;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+}
+
+.modalSubmitBtn:hover:not(:disabled) {
+    background: currentColor;
+    color: #0d0206 !important;
+    box-shadow: 0 0 16px currentColor;
+}
+
+.modalSubmitBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.modalHint {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9px;
+    color: rgba(255, 230, 238, 0.25);
+    letter-spacing: 0.5px;
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
+@media (max-width: 480px) {
+    .passwordModalContent {
+        padding: 20px;
+    }
+    .modalActionRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .modalSubmitBtn {
+        width: 100%;
+    }
+}

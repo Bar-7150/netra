@@ -1,0 +1,251 @@
+.hero{
+    height:70vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.hacker-rain-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.intro {
+    position: relative;
+    z-index: 1;
+    margin-left: 58px;
+}
+.intro h4{
+    width:30vw;
+    padding: 20px;
+    color: #fd6195  !important;
+     /* color: #00ffcc !important; */
+    text-shadow: 0 0 5px rgba(35, 24, 27, 0.1);
+   
+     /* Make the background semi-transparent */
+  /* background-color: rgba(237, 237, 237, 0.3);  */
+  
+  /* Apply the blur to the elements behind this card */
+  backdrop-filter: blur(2px); 
+  
+  /* Safari support */
+  -webkit-backdrop-filter: blur(1px); 
+}
+
+.intro h2{
+    margin:10px 20px;
+    color: #ffffff;
+    font-family: "JetBrains Mono", monospace;
+    letter-spacing: 2px;
+}
+.cyber{
+    padding: 10px;
+}
+.cyber h1{
+    font-family: "Monoton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #ffe6ed;
+}
+.glow-cyan {
+    color: #00ffcc !important;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.6), 0 0 20px rgba(0, 255, 204, 0.3) !important;
+}
+.glow-pink {
+    color: #ff3366 !important;
+    text-shadow: 0 0 10px rgba(255, 51, 102, 0.6), 0 0 20px rgba(255, 51, 102, 0.3) !important;
+}
+.cyber-btn {
+    margin: 20px;
+    height: 42px;
+    width: 130px;
+    border-radius: 4px;
+    border: 1px solid #ff3366;
+    background-color: transparent;
+    color: #ff3366;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
+    transition: all 0.3s ease;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.cyber-btn:hover {
+    background-color: #ff3366;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 51, 102, 0.6);
+    transform: translateY(-2px);
+    text-shadow: 0 0 3px #ffffff;
+}
+/* ── Profile Target Wrapper ── */
+.profile-target-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 460px;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* SVG radar overlay — sits on top of everything */
+.target-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Profile circle — centered inside wrapper */
+.profilePic {
+    position: absolute;
+    z-index: 2;
+    width: 320px;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-image: linear-gradient(to top, #ff3366, #660022, #0d0206);
+    /* Neon ring border */
+    box-shadow:
+        0 0 0 2px rgba(0, 255, 204, 0.35),
+        0 0 18px rgba(0, 255, 204, 0.2),
+        0 0 40px rgba(0, 255, 204, 0.08),
+        inset 0 0 30px rgba(0, 0, 0, 0.5);
+}
+.profilePic img {
+    height: 380px;
+    position: relative;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ── SVG Animations ── */
+
+/* Outer ring slow clockwise */
+.ring-spin-slow {
+    transform-origin: 250px 250px;
+    animation: spin-cw 18s linear infinite;
+}
+
+/* Inner ring counter-clockwise */
+.ring-spin-rev {
+    transform-origin: 250px 250px;
+    animation: spin-ccw 12s linear infinite;
+}
+
+/* Scan arm rotates like a radar sweep */
+.scan-arm {
+    animation: spin-cw 4s linear infinite;
+}
+
+/* Horizontal scan line sweeps down */
+.scan-line-h {
+    animation: scan-down 3s ease-in-out infinite;
+}
+
+@keyframes spin-cw {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
+
+@keyframes scan-down {
+    0%   { transform: translateY(0px);   opacity: 0.8; }
+    50%  { transform: translateY(400px); opacity: 0.4; }
+    100% { transform: translateY(0px);   opacity: 0.8; }
+}
+
+/* ── Tablet (1050px → 800px): side-by-side preserved, smaller fonts ── */
+@media (max-width: 1050px) {
+    .hero {
+        justify-content: space-between;
+        padding: 60px 30px;
+        gap: 20px;
+    }
+    .intro { margin-left: 20px; }
+    .intro h2 { font-size: 1.1rem; }
+    .cyber h1 { font-size: 1.6rem; }
+    .intro h4 { font-size: 0.85rem; width: 36vw; padding: 14px; }
+    .cyber-btn { height: 38px; width: 115px; font-size: 0.72rem; }
+    .profile-target-wrapper { width: 380px; height: 380px; flex-shrink: 0; }
+    .profilePic { width: 270px; height: 270px; }
+    .profilePic img { height: 310px; }
+}
+
+/* ── Mobile (≤800px): stacked layout, fluid sizes scale with viewport ── */
+@media (max-width: 800px) {
+    .hero {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: clamp(30px, 6vw, 60px) clamp(16px, 5vw, 40px);
+        gap: clamp(16px, 3vw, 30px);
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Profile pic scales up as screen grows (min at ~320px, max approaching 800px) */
+    .profile-target-wrapper {
+        width: clamp(200px, 55vw, 440px);
+        height: clamp(200px, 55vw, 440px);
+        flex-shrink: 0;
+    }
+    .profilePic {
+        width: clamp(140px, 38vw, 310px);
+        height: clamp(140px, 38vw, 310px);
+    }
+    .profilePic img {
+        height: clamp(165px, 45vw, 360px);
+        bottom: clamp(18px, 5vw, 40px);
+    }
+
+    /* Intro text center-aligned and fluid */
+    .intro {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .intro h2 {
+        font-size: clamp(0.7rem, 3vw, 1rem);
+        margin: 6px 0;
+    }
+    .cyber h1 {
+        font-size: clamp(0.9rem, 4.5vw, 1.8rem) !important;
+    }
+    /* Override bold inline font-sizes on CYBER / SOLUTION / FOR YOUR SECURITY spans */
+    .cyber h1 span {
+        font-size: clamp(0.9rem, 4vw, 1.8rem) !important;
+    }
+    .cyber { padding: clamp(2px, 0.5vw, 6px); }
+    .intro h4 {
+        width: 90%;
+        font-size: clamp(0.65rem, 2vw, 0.82rem);
+        padding: clamp(8px, 1.5vw, 14px);
+        margin: 0 auto;
+    }
+    .cyber-btn {
+        height: clamp(32px, 4.5vw, 40px);
+        width: clamp(95px, 20vw, 130px);
+        font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+        margin: clamp(8px, 1.5vw, 14px) 8px;
+    }
+}

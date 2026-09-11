@@ -1,0 +1,250 @@
+
+.nav {
+    position: sticky;
+    top: 0; left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 62px;
+    z-index: 999;
+    box-sizing: border-box;
+    background: rgba(5, 0, 12, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 255, 204, 0.18);
+    box-shadow:
+        0 1px 0 rgba(0, 255, 204, 0.08),
+        0 4px 32px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.nav::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, #00ffcc 30%, #ff3366 70%, transparent 100%);
+    opacity: 0.5;
+}
+
+/* ── Brand ── */
+.navBrand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navPrompt {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #00ffcc;
+    text-shadow: 0 0 10px rgba(0,255,204,0.7), 0 0 22px rgba(0,255,204,0.35);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.navLogoImg {
+    width: 52px; height: 52px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 10px rgba(0,255,204,0.45));
+}
+
+.navPrompt:hover {
+    color: #ffffff;
+    text-shadow: 0 0 14px rgba(0,255,204,0.9), 0 0 28px rgba(0,255,204,0.5);
+}
+
+.navLogoTxt {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.45);
+    letter-spacing: 0.5px;
+}
+
+/* ── Menu ── */
+.navMenu {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.navLink {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+    position: relative;
+    user-select: none;
+}
+
+.navLink::before { content: '['; color: rgba(0,255,204,0); transition: all 0.25s ease; margin-right: 2px; }
+.navLink::after  { content: ']'; color: rgba(0,255,204,0); transition: all 0.25s ease; margin-left: 2px; }
+
+.navLink:hover {
+    color: #00ffcc;
+    border-color: rgba(0,255,204,0.25);
+    background: rgba(0,255,204,0.06);
+    text-shadow: 0 0 8px rgba(0,255,204,0.6);
+}
+
+.navLink:hover::before,
+.navLink:hover::after { color: rgba(0,255,204,0.7); }
+
+/* Replay button */
+.navReplayBtn {
+    color: #ff3366 !important;
+    border-color: rgba(255,51,102,0.2) !important;
+    font-size: 10.5px !important;
+}
+.navReplayBtn::before { content: '[ ' !important; color: rgba(255,51,102,0.6) !important; }
+.navReplayBtn::after  { content: ' ]' !important; color: rgba(255,51,102,0.6) !important; }
+.navReplayBtn:hover {
+    color: #ff0055 !important;
+    border-color: rgba(255,51,102,0.5) !important;
+    background: rgba(255,51,102,0.08) !important;
+    text-shadow: 0 0 10px rgba(255,0,85,0.7) !important;
+}
+
+/* ── Status dot ── */
+.navStatus {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+    color: rgba(0,255,204,0.5);
+    letter-spacing: 0.8px;
+}
+
+.navStatusDot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #00ffcc;
+    box-shadow: 0 0 6px #00ffcc, 0 0 12px rgba(0,255,204,0.4);
+    animation: pulseDot 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ── Contact Button ── */
+.navContactBtn {
+    background: transparent;
+    border: 1px solid rgba(0,255,204,0.55);
+    border-radius: 3px;
+    color: #00ffcc;
+    padding: 8px 18px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(0,255,204,0.12), inset 0 0 10px rgba(0,255,204,0.04);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.navContactBtn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,255,204,0.12), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.navContactBtn:hover {
+    border-color: #00ffcc;
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(0,255,204,0.5), 0 0 40px rgba(0,255,204,0.15), inset 0 0 14px rgba(0,255,204,0.08);
+    transform: translateY(-1px);
+    text-shadow: 0 0 6px rgba(0,255,204,0.8);
+}
+.navContactBtn:hover::before { opacity: 1; }
+
+/* ── Hamburger ── */
+.navHamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+.navHamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: #00ffcc;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* ── Mobile Overlay ── */
+.navMobileOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 0, 12, 0.97);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 24px);
+    border-top: 1px solid rgba(0,255,204,0.12);
+    overflow-y: auto;
+    padding: 20px 0;
+}
+.navMobileOverlay.open { display: flex; }
+.navMobileOverlay .navLink {
+    font-size: clamp(0.85rem, 4vw, 1.2rem);
+    padding: clamp(8px,2vw,12px) clamp(16px,4vw,24px);
+    letter-spacing: clamp(1px,0.4vw,1.5px);
+    width: clamp(160px, 60vw, 280px);
+    text-align: center;
+}
+.navMobileOverlay .navContactBtn {
+    margin-top: clamp(6px, 2vw, 14px);
+    padding: clamp(8px,2vw,12px) clamp(20px,5vw,32px);
+    font-size: clamp(0.75rem, 3vw, 1rem);
+}
+
+/* ── Tablet (≤1024px) ── */
+@media (max-width: 1024px) {
+    .nav { padding: 0 24px; }
+    .navMenu { gap: 2px; }
+    .navLink { font-size: 10.5px; padding: 6px 8px; }
+}
+
+/* ── Mobile (≤768px) ── */
+@media (max-width: 768px) {
+    .nav { padding: 0 16px; }
+    .navMenu { display: none; }
+    .navContactBtn { display: none; }
+    .navStatus { display: none; }
+    .navHamburger { display: flex; }
+    .navLogoTxt { display: none; }
+}

@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
+
+:root {
+  --cyberPink: #ff3366;
+  --cyberPinkGlow: rgba(255, 51, 102, 0.4);
+  --cyberCyan: #00ffcc;
+  --cyberCyanGlow: rgba(0, 255, 204, 0.4);
+  --matrixBg: #0d0206;
+  --matrixPanelBg: rgba(26, 4, 12, 0.6);
+  --matrixBorder: #4d0f1f;
+  --matrixGray: #8a6673;
+  --matrixLightGray: #d4b8c3;
+  --fontMono: 'JetBrains Mono', monospace;
+}
+
+.contContainer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  background-color: transparent;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(255, 51, 102, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(0, 255, 204, 0.05), transparent 25%);
+  font-family: var(--fontMono);
+  position: relative;
+}
+
+.contBgMap {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: radial-gradient(var(--cyberPink) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.contContent {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.contLeftPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.connStatus {
+  color: var(--cyberCyan);
+  font-size: 0.85rem;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.contLeftHead {
+  margin-bottom: 25px;
+}
+
+.glitchTitle {
+  position: relative;
+  font-size: clamp(3rem, 4.5vw, 4.5rem);
+  font-weight: 800;
+  color: var(--cyberCyan);
+  text-shadow: 0 0 10px var(--cyberCyanGlow), 0 0 20px var(--cyberCyanGlow);
+  margin: 0 0 15px 0;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.glitchTitle::before,
+.glitchTitle::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%;
+  overflow: hidden;
+  clip: rect(0, 9999px, 0, 0);
+}
+
+.glitchTitle::before {
+  color: var(--cyberPink);
+  z-index: -1;
+  animation: glitchClip1 2.5s infinite linear alternate-reverse;
+  opacity: 0.8;
+}
+
+.glitchTitle::after {
+  color: #ffffff;
+  z-index: -2;
+  animation: glitchClip2 3.2s infinite linear alternate-reverse;
+  opacity: 0.4;
+}
+
+@keyframes glitchClip1 {
+  0%   { clip: rect(2px, 9999px, 10px, 0);  transform: translate(-2px, -1px); }
+  25%  { clip: rect(12px, 9999px, 18px, 0); transform: translate(2px, 1px); }
+  50%  { clip: rect(4px, 9999px, 14px, 0);  transform: translate(-1px, 0); }
+  75%  { clip: rect(8px, 9999px, 16px, 0);  transform: translate(1px, -1px); }
+  100% { clip: rect(2px, 9999px, 12px, 0);  transform: translate(-1px, 1px); }
+}
+
+@keyframes glitchClip2 {
+  0%   { clip: rect(18px, 9999px, 26px, 0); transform: translate(1px, 2px); }
+  20%  { clip: rect(4px, 9999px, 9px, 0);   transform: translate(-1px, -1px); }
+  40%  { clip: rect(12px, 9999px, 20px, 0); transform: translate(0, 1px); }
+  60%  { clip: rect(2px, 9999px, 8px, 0);   transform: translate(1px, -2px); }
+  80%  { clip: rect(14px, 9999px, 22px, 0); transform: translate(-2px, 0); }
+  100% { clip: rect(6px, 9999px, 12px, 0);  transform: translate(2px, 1px); }
+}
+
+.contSubtitle {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.txtLight { color: #ffe6ed; }
+.txtGreen { color: var(--cyberPink); }
+
+.contProgressBar {
+  height: 4px;
+  width: 180px;
+  background: linear-gradient(90deg, var(--cyberCyan) 0%, rgba(0, 255, 204, 0.2) 100%);
+  margin-bottom: 40px;
+  box-shadow: 0 0 10px var(--cyberCyanGlow);
+}
+
+.contCopy {
+  color: var(--matrixLightGray);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 50px;
+  max-width: 90%;
+}
+
+.contMtdSection { margin-bottom: 50px; }
+
+.mtdHeading {
+  color: var(--cyberPink);
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.contMtds {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contMtd {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.mtdIcon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--cyberCyan);
+  border-radius: 8px;
+  color: var(--cyberCyan);
+  font-size: 1.2rem;
+  background-color: rgba(0, 255, 204, 0.05);
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+}
+
+.mtdLabel {
+  color: var(--matrixLightGray);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin: 0 0 5px 0;
+}
+
+.mtdVal {
+  color: var(--cyberCyan);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.contQuotePanel {
+  border: 1px solid var(--matrixBorder);
+  padding: 25px;
+  border-radius: 8px;
+  margin-top: auto;
+  background-color: var(--matrixPanelBg);
+}
+
+.contQuotePanel p {
+  color: var(--matrixGray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* RIGHT PANEL */
+.contRightPanel {
+  border: 1px solid var(--matrixBorder);
+  padding: 40px;
+  border-radius: 12px;
+  background-color: var(--matrixPanelBg);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.05);
+}
+
+.contRightHead { margin-bottom: 35px; }
+
+.rightHeading {
+  color: var(--cyberPink);
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.contForm {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.frmGrp {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.frmLabel {
+  color: var(--matrixLightGray);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.frmInput,
+.frmTextarea {
+  width: 100%;
+  padding: 16px;
+  background-color: rgba(13, 2, 6, 0.8);
+  border: 1px solid var(--matrixBorder);
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: var(--fontMono);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.frmTextarea {
+  resize: vertical;
+  min-height: 160px;
+}
+
+.frmInput:focus,
+.frmTextarea:focus {
+  border-color: var(--cyberCyan);
+  box-shadow: 0 0 8px var(--cyberCyanGlow);
+}
+
+.frmInput::placeholder,
+.frmTextarea::placeholder {
+  color: var(--matrixGray);
+}
+
+.frmInput.error,
+.frmTextarea.error {
+  border-color: var(--cyberPink);
+}
+
+.errTxt {
+  color: var(--cyberPink);
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+.frmSubmitWrap { margin-top: 15px; }
+
+.submitBtn {
+  width: 100%;
+  padding: 18px;
+  background-color: transparent;
+  border: 1px solid var(--cyberPink);
+  color: var(--cyberPink);
+  font-family: var(--fontMono);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
+}
+
+.submitBtn:hover {
+  background-color: var(--cyberPink);
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.6);
+  transform: translateY(-2px);
+  text-shadow: 0 0 3px #ffffff;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contFootnote {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.footnoteIcon {
+  color: var(--matrixGray);
+  font-size: 1.1rem;
+  margin-top: 2px;
+}
+
+.contFootnote p {
+  color: var(--matrixGray);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.successMsg {
+  border: 1px solid var(--cyberCyan);
+  background-color: rgba(0, 255, 204, 0.1);
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+}
+
+.successMsg p {
+  color: var(--cyberCyan);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .contContent { grid-template-columns: 1fr; gap: 40px; }
+  .glitchTitle { font-size: 2.5rem; }
+  .contRightPanel { padding: 25px; }
+}
+
+@media (max-width: 768px) {
+  .contContainer { padding: 70px 16px; }
+  .glitchTitle { font-size: 2rem; }
+  .contSubtitle { font-size: 0.85rem; }
+  .contRightPanel { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .contContainer { padding: 60px 12px; }
+  .glitchTitle { font-size: 1.6rem; letter-spacing: 1px; }
+  .connStatus { margin-bottom: 24px; font-size: 0.75rem; }
+  .contRightPanel { padding: 16px; }
+  .contFootnote { gap: 8px; }
+}

@@ -1,0 +1,288 @@
+/* ═══════════════════════════════════════
+   EXPERIENCE SECTION — HACKER TERMINAL
+   ═══════════════════════════════════════ */
+
+.expSection {
+  min-height: 100vh;
+  padding: 60px 50px;
+  background-color: transparent;
+  position: relative;
+}
+
+.expSectionLabel {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(0, 255, 204, 0.5);
+  text-align: center;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.expSection h1 {
+  margin: 0 0 60px 0;
+  color: #ff3366;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 3px;
+  text-shadow: 0 0 14px rgba(255, 51, 102, 0.5), 0 0 30px rgba(255, 51, 102, 0.2);
+  position: relative;
+}
+
+.expSection h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ff3366, #00ffcc, transparent);
+  margin: 12px auto 0;
+  animation: linePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes linePulse {
+  0%, 100% { opacity: 0.5; width: 80px; }
+  50%       { opacity: 1;   width: 160px; }
+}
+
+/* ── Timeline Layout ── */
+.expCont {
+  display: flex;
+  gap: 60px;
+  position: relative;
+}
+
+.expTimeline {
+  flex: 0 0 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.expLine {
+  position: absolute;
+  width: 2px;
+  height: 0%;
+  background: linear-gradient(180deg,
+      #00ffcc 0%,
+      rgba(255, 51, 102, 0.6) 60%,
+      rgba(255, 51, 102, 0.1) 100%);
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  box-shadow: 0 0 8px rgba(0, 255, 204, 0.4);
+}
+
+.expDots {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 240px;
+  z-index: 10;
+}
+
+/* ── Timeline dot — hacker crosshair style ── */
+.expDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #00ffcc;
+  box-shadow:
+    0 0 0 4px rgba(0, 255, 204, 0.08),
+    0 0 14px rgba(0, 255, 204, 0.5),
+    inset 0 0 8px rgba(0, 255, 204, 0.2);
+  position: relative;
+  transition: all 0.3s ease;
+  animation: dotPing 2.5s ease-in-out infinite;
+}
+
+.expDot::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #00ffcc;
+  box-shadow: 0 0 6px #00ffcc;
+}
+
+.expDot::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 204, 0.35);
+  animation: dotPing 2.5s ease-in-out infinite;
+}
+
+@keyframes dotPing {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.15); }
+}
+
+.expDot:hover {
+  border-color: #ff3366;
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.7);
+  transform: scale(1.2);
+}
+
+/* ── Experience Cards ── */
+.expList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding-top: 10px;
+}
+
+.expCard {
+  background: rgba(5, 0, 12, 0.6);
+  border: 1px solid rgba(0, 255, 204, 0.15);
+  border-radius: 6px;
+  padding: 28px 32px;
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+  min-height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.expCard::before,
+.expCard::after {
+  content: '';
+  position: absolute;
+  width: 16px; height: 16px;
+  transition: all 0.3s ease;
+}
+
+.expCard::before {
+  top: -1px; left: -1px;
+  border-top: 2px solid #00ffcc;
+  border-left: 2px solid #00ffcc;
+  border-radius: 2px 0 0 0;
+}
+
+.expCard::after {
+  bottom: -1px; right: -1px;
+  border-bottom: 2px solid rgba(255, 51, 102, 0.6);
+  border-right: 2px solid rgba(255, 51, 102, 0.6);
+  border-radius: 0 0 2px 0;
+}
+
+.expCard .cardScan {
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 204, 0.6), transparent);
+  transition: none;
+}
+
+.expCard:hover .cardScan {
+  animation: cardScanSweep 0.8s ease forwards;
+}
+
+@keyframes cardScanSweep {
+  from { left: -100%; }
+  to   { left: 100%; }
+}
+
+.expCard:hover {
+  background: rgba(0, 255, 204, 0.04);
+  border-color: rgba(0, 255, 204, 0.35);
+  transform: translateX(12px);
+  box-shadow:
+    0 0 0 1px rgba(0, 255, 204, 0.1),
+    0 8px 32px rgba(0, 255, 204, 0.08),
+    -4px 0 20px rgba(255, 51, 102, 0.12);
+}
+
+.expIdTag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  color: rgba(0, 255, 204, 0.4);
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.expHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.expHeader h3 {
+  color: #ff3366;
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.4);
+}
+
+.expDuration {
+  color: #00ffcc;
+  font-size: 0.8rem;
+  background: rgba(0, 255, 204, 0.06);
+  padding: 4px 12px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 255, 204, 0.25);
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+}
+
+.expCompany {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.95rem;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.5px;
+}
+
+.expCompany::before {
+  content: '> ';
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+.expDesc {
+  color: #ffccdd;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+  border-left: 2px solid rgba(255, 51, 102, 0.25);
+  padding-left: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .expSection { padding: 60px 30px; }
+  .expCont { gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .expSection { padding: 40px 20px; }
+  .expSection h1 { font-size: 2rem; margin-bottom: 25px; }
+  .expCont { flex-direction: column; gap: 30px; }
+  .expTimeline { flex: 1; min-height: 80px; }
+  .expDots { flex-direction: row; gap: 80px; top: auto; left: 0; transform: none; }
+  .expLine { width: 100%; height: 3px !important; top: 50%; left: 0; transform: none; }
+  .expList { gap: 24px; padding-top: 0; }
+  .expCard { padding: 20px; }
+  .expHeader { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+@media (max-width: 480px) {
+  .expSection { padding: 30px 14px; }
+  .expSection h1 { font-size: 1.6rem; letter-spacing: 2px; }
+  .expCard { padding: 16px; }
+  .expHeader h3 { font-size: 1.1rem; }
+  .expDuration { font-size: 0.72rem; padding: 4px 10px; }
+  .expDesc { font-size: 0.85rem; }
+}

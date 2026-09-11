@@ -1,0 +1,61 @@
+.archiv{
+    width: 80vw;
+    height: auto;
+    min-height: 15vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    background-color: #120208;
+    border: 1px solid rgba(255, 51, 102, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+    margin: 40px 0;
+}
+.archiv div{
+    flex: 1 1 200px;
+    max-width: 25vw;
+    padding: 20px;
+    margin: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    background: #1c030e;
+    border: 1px solid rgba(255, 51, 102, 0.25);
+    color: #ffb3cc;
+    font-family: "JetBrains Mono", monospace;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 51, 102, 0.05);
+    transition: all 0.3s ease;
+}
+.archiv div:hover {
+    border-color: #ff3366;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
+    transform: translateY(-3px);
+}
+@media (max-width: 768px) {
+    .archiv div {
+        max-width: 100%;
+        flex: 1 1 100%;
+        margin: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .archiv {
+        width: 92vw;
+        padding: 10px 0;
+        margin: 24px 0;
+    }
+    .archiv div {
+        margin: 8px 14px;
+        font-size: 14px;
+        padding: 16px;
+    }
+}
+

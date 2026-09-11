@@ -1,0 +1,104 @@
+body {
+     background-color: #0d0206;
+     background-image: radial-gradient(circle at 50% 50%, #1a030f 0%, #0d0206 100%);
+     min-height: 100vh;
+     width: 100%;
+     color: #ffe6ed;
+     margin: 0;
+     padding: 0;
+     overflow-x: hidden;
+}
+
+/* Custom scrollbar matching the hacking overlay */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0206;
+  border-left: 1px solid rgba(255, 51, 102, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 51, 102, 0.45);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3366;
+  box-shadow: 0 0 10px #ff3366;
+}
+
+html, body, #root {
+  cursor: none !important;
+}
+
+.custom-cursor-layer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 100001;
+}
+
+.custom-cursor {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 0 18px rgba(255, 55, 105, 0.55));
+}
+
+.custom-cursor-svg {
+  width: 34px;
+  height: 34px;
+}
+
+.binary-particle {
+  position: fixed;
+  display: inline-block;
+  pointer-events: none;
+  color: #00ffcc;;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  text-shadow: 0 0 8px rgba(255, 143, 179, 0.8);
+  will-change: transform, opacity;
+  animation-name: binary-smoke;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 600px) {
+  .custom-cursor-svg {
+    width: 28px;
+    height: 28px;
+  }
+  .binary-particle {
+    font-size: 0.7rem;
+  }
+}
+
+@keyframes binary-smoke {
+  0% {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--drift)), 0) scale(1);
+  }
+  40% {
+    opacity: 0.85;
+    transform: translate(calc(-50% + var(--drift) * 0.5), -18px) scale(1.05);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--drift)), -62px) scale(1.2);
+  }
+}
+
+@keyframes binary-flicker {
+  0% { opacity: 0.8; transform: translate(-50%, 8px) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, 10px) scale(1.02); }
+  100% { opacity: 0.85; transform: translate(-50%, 12px) scale(0.98); }
+
+}
