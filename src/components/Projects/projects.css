@@ -393,7 +393,7 @@
 }
 
 @media (max-width: 480px) {
-    .projectsSectionLabel { font-size: 10px; letter-spacing: 2px; margin: 40px 0 6px; }
+    .projectsSectionLabel { font-size: 10px; letter-spacing: 2px; margin: 24px 0 6px; }
     .projectsSectionTitle { font-size: 1.3rem; letter-spacing: 2px; }
     .projectsTabs { gap: 6px; padding: 0 10px; }
     .projectsTab { font-size: 9px; padding: 5px 10px; }

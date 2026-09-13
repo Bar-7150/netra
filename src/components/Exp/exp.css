@@ -267,7 +267,7 @@
 }
 
 @media (max-width: 768px) {
-  .expSection { padding: 40px 20px; }
+  .expSection { min-height: auto; padding: 40px 20px 36px; }
   .expSection h1 { font-size: 2rem; margin-bottom: 25px; }
   .expCont { flex-direction: column; gap: 30px; }
   .expTimeline { flex: 1; min-height: 80px; }
@@ -279,7 +279,7 @@
 }
 
 @media (max-width: 480px) {
-  .expSection { padding: 30px 14px; }
+  .expSection { padding: 30px 14px 28px; }
   .expSection h1 { font-size: 1.6rem; letter-spacing: 2px; }
   .expCard { padding: 16px; }
   .expHeader h3 { font-size: 1.1rem; }

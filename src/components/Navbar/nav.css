@@ -246,5 +246,5 @@
     .navContactBtn { display: none; }
     .navStatus { display: none; }
     .navHamburger { display: flex; }
-    .navLogoTxt { display: none; }
+    .navLogoTxt { display: inline; font-size: 11px; }
 }

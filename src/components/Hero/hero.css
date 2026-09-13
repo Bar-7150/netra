@@ -221,17 +221,17 @@
 
     /* Profile pic scales up as screen grows (min at ~320px, max approaching 800px) */
     .profile-target-wrapper {
-        width: clamp(200px, 55vw, 440px);
-        height: clamp(200px, 55vw, 440px);
+        width: clamp(240px, 68vw, 460px);
+        height: clamp(240px, 68vw, 460px);
         flex-shrink: 0;
     }
     .profilePic {
-        width: clamp(140px, 38vw, 310px);
-        height: clamp(140px, 38vw, 310px);
+        width: clamp(180px, 48vw, 330px);
+        height: clamp(180px, 48vw, 330px);
     }
     .profilePic img {
-        height: clamp(165px, 45vw, 360px);
-        bottom: clamp(18px, 5vw, 40px);
+        height: clamp(205px, 56vw, 390px);
+        bottom: clamp(22px, 6vw, 44px);
     }
 
     /* Intro text center-aligned and fluid */
@@ -241,16 +241,16 @@
         width: 100%;
     }
     .intro h2 {
-        font-size: clamp(0.7rem, 3vw, 1rem);
+        font-size: clamp(0.8rem, 3.4vw, 1.1rem);
         margin: 6px 0;
     }
-    .cyber h1 { font-size: clamp(0.9rem, 4.5vw, 1.8rem) !important; }
+    .cyber h1 { font-size: clamp(1.1rem, 5.4vw, 2.2rem) !important; }
     /* Override bold inline font-sizes on CYBER / SOLUTION / FOR YOUR SECURITY spans */
-    .cyber h1 span { font-size: clamp(0.9rem, 4vw, 1.8rem) !important; }
+    .cyber h1 span { font-size: clamp(1.2rem, 5vw, 2.4rem) !important; }
     .cyber { padding: clamp(2px, 0.5vw, 6px); }
     .intro h4 {
         width: 90%;
-        font-size: clamp(0.65rem, 2vw, 0.82rem);
+        font-size: clamp(0.75rem, 2.5vw, 0.95rem);
         padding: clamp(8px, 1.5vw, 14px);
         margin: 0 auto;
     }
