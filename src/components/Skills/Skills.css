@@ -282,13 +282,36 @@
 }
 
 .sub-panel .tool-pill-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(138px, 1fr));
+  gap: 8px;
   margin-top: 0;
 }
 
 .sub-panel .tool-pill {
-  min-height: 52px;
+  min-height: 74px;
+}
+
+.tool-pill:hover {
+  animation: skillDistort 420ms steps(2, end);
+}
+
+.tool-pill:hover .tool-name {
+  animation: skillTextDistort 420ms steps(2, end);
+  text-shadow: 2px 0 #ff315f, -2px 0 #00f5b8;
+}
+
+@keyframes skillDistort {
+  0%, 100% { transform: translate(0, 0) skewX(0); }
+  25% { transform: translate(-2px, 1px) skewX(-1deg); border-color: #ff315f; }
+  50% { transform: translate(2px, -1px) skewX(1deg); border-color: #00f5b8; }
+  75% { transform: translate(-1px, 0) skewX(-0.5deg); }
+}
+
+@keyframes skillTextDistort {
+  0%, 100% { clip-path: inset(0); }
+  35% { clip-path: inset(0 0 45% 0); }
+  70% { clip-path: inset(45% 0 0 0); }
 }
 
 @keyframes skillCaret { 50% { opacity: 0; } }
