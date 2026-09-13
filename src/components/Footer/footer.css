@@ -32,14 +32,14 @@
   letter-spacing: 1.8px;
   font-size: 0.72rem;
   color: #00ffcc;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
 }
 
 .ftTitle {
   margin: 6px 0 8px;
   font-size: 1.1rem;
   color: #ff3366;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
 }
 
 .ftCopy,
@@ -48,7 +48,7 @@
   color: #f2dbe6;
   font-size: 0.92rem;
   line-height: 1.5;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
 }
 
 .ftLinks {
@@ -85,7 +85,7 @@
   flex-wrap: wrap;
   color: #d5c2cb;
   font-size: 0.82rem;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
 }
 
 @media (max-width: 980px) {

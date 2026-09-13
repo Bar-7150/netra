@@ -10,7 +10,7 @@
   --matrixBorder: #4d0f1f;
   --matrixGray: #8a6673;
   --matrixLightGray: #d4b8c3;
-  --fontMono: 'JetBrains Mono', monospace;
+  --fontMono: 'VT323', monospace;
 }
 
 .contContainer {

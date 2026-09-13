@@ -10,7 +10,7 @@
 }
 
 .expSectionLabel {
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   font-size: 11px;
   letter-spacing: 3px;
   color: rgba(0, 255, 204, 0.5);
@@ -25,7 +25,7 @@
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   letter-spacing: 3px;
   text-shadow: 0 0 14px rgba(255, 51, 102, 0.5), 0 0 30px rgba(255, 51, 102, 0.2);
   position: relative;
@@ -201,7 +201,7 @@
 }
 
 .expIdTag {
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   font-size: 9px;
   color: rgba(0, 255, 204, 0.4);
   letter-spacing: 2px;
@@ -220,7 +220,7 @@
   font-size: 1.4rem;
   margin: 0;
   font-weight: 700;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   letter-spacing: 1px;
   text-shadow: 0 0 8px rgba(255, 51, 102, 0.4);
 }
@@ -232,7 +232,7 @@
   padding: 4px 12px;
   border-radius: 3px;
   border: 1px solid rgba(0, 255, 204, 0.25);
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   letter-spacing: 0.5px;
 }
 
@@ -241,7 +241,7 @@
   font-size: 0.95rem;
   margin: 0 0 10px 0;
   font-weight: 500;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   letter-spacing: 0.5px;
 }
 

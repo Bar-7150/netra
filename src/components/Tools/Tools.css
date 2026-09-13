@@ -8,7 +8,7 @@
 }
 
 .tools-label {
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 11px;
@@ -18,7 +18,7 @@
 
 .tools-section h2 {
   text-align: center;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   color: #ff3366;
   text-shadow: 0 0 14px rgba(255, 51, 102, 0.35);
   margin-bottom: 12px;
@@ -72,13 +72,13 @@
 
 .tool-header h3 {
   margin: 0;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   color: #00ffcc;
   font-size: 1rem;
 }
 
 .tool-chip {
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.8px;
@@ -111,7 +111,7 @@
   border-radius: 10px;
   color: #fff;
   padding: 11px 12px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   box-sizing: border-box;
 }
 
@@ -122,7 +122,7 @@
   color: #fff;
   padding: 10px 14px;
   cursor: pointer;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   min-height: 42px;
@@ -177,7 +177,7 @@
 .meter-fill.good { background: linear-gradient(90deg, #00ffcc, #7affef); }
 .meter-fill.strong { background: linear-gradient(90deg, #7cff6b, #c7ffbc); }
 
-.strength-text { font-family: "JetBrains Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1.4px; }
+.strength-text { font-family: 'VT323', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 1.4px; }
 .strength-text.danger { color: #ff7d9b; }
 .strength-text.warn { color: #ffd06b; }
 .strength-text.good { color: #7affef; }
@@ -192,7 +192,7 @@
   margin-top: 18px;
   text-align: center;
   color: #d8fff8;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   font-size: 0.92rem;
 }
 

@@ -62,7 +62,7 @@ html, body, #root {
   display: inline-block;
   pointer-events: none;
   color: #00ffcc;;
-  font-family: "JetBrains Mono", monospace;
+  font-family: 'VT323', monospace;
   font-size: 0.8rem;
   text-shadow: 0 0 8px rgba(255, 143, 179, 0.8);
   will-change: transform, opacity;

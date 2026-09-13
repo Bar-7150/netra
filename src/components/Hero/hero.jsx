@@ -97,7 +97,7 @@ function Hero() {
 
         const draw = (now) => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.font         = `${fontSize}px "JetBrains Mono", monospace`;
+            ctx.font         = `${fontSize}px "VT323", monospace`;
             ctx.textBaseline = 'top';
 
             /* ── Scroll completed lines upward ── */
@@ -195,9 +195,9 @@ function Hero() {
             <div className="intro">
                 <div><h2>HII, I AM SUNETRA BAR</h2></div>
                 <div className='cyber'>
-                    <h1>PROVIDE &nbsp; THE &nbsp; BEST </h1>
-                    <h1><span className="glow-cyan" style={{ fontFamily: "Monoton", fontWeight:'400' , fontSize:'38px' }}>CYBER</span> &nbsp;&nbsp;&nbsp;<span className="glow-pink" style={{ fontFamily: "sans-serif", fontWeight:'900' , fontSize:'38px' }}>SOLUTION</span></h1>
-                    <h1 style={{ fontFamily: "sans-serif", fontWeight:'900' , fontSize:'38px', color: '#ffffff', textShadow: '0 0 10px rgba(255,255,255,0.2)' }}> FOR YOUR SECURITY</h1>
+                    <h1>PROVIDE THE BEST</h1>
+                    <h1><span className="glow-cyan">CYBER</span> <span className="glow-pink">SOLUTION</span></h1>
+                    <h1 style={{ fontWeight:'900', color: '#ffffff', textShadow: '0 0 10px rgba(255,255,255,0.2)' }}>FOR YOUR SECURITY</h1>
                 </div>
                  <div>
                      <h4>I am a tech enthusiast skilled in MERN stack Web Development, AI/ML and Cyber Security. I build scalable applications, design intelligent models, solve algorithmic challenges, and ensure secure systems.</h4>
@@ -235,13 +235,13 @@ function Hero() {
                     </g>
 
                     {/* HEX coordinate labels */}
-                    <text x="68" y="58"  fontFamily="JetBrains Mono, monospace" fontSize="9" fill="rgba(0,255,204,0.55)">0x3A:FF</text>
-                    <text x="390" y="58" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="rgba(0,255,204,0.55)">0xB7:2C</text>
-                    <text x="68" y="455" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="rgba(255,51,102,0.55)">0xE1:94</text>
-                    <text x="390" y="455" fontFamily="JetBrains Mono, monospace" fontSize="9" fill="rgba(255,51,102,0.55)">0x4D:08</text>
+                    <text x="68" y="58"  fontFamily="VT323, monospace" fontSize="9" fill="rgba(0,255,204,0.55)">0x3A:FF</text>
+                    <text x="390" y="58" fontFamily="VT323, monospace" fontSize="9" fill="rgba(0,255,204,0.55)">0xB7:2C</text>
+                    <text x="68" y="455" fontFamily="VT323, monospace" fontSize="9" fill="rgba(255,51,102,0.55)">0xE1:94</text>
+                    <text x="390" y="455" fontFamily="VT323, monospace" fontSize="9" fill="rgba(255,51,102,0.55)">0x4D:08</text>
 
                     {/* LOCKED ON label */}
-                    <text x="250" y="490" fontFamily="JetBrains Mono, monospace" fontSize="10" fill="rgba(0,255,204,0.6)" textAnchor="middle" letterSpacing="3">[ IT'S SUNETRA ]</text>
+                    <text x="250" y="490" fontFamily="VT323, monospace" fontSize="10" fill="rgba(0,255,204,0.6)" textAnchor="middle" letterSpacing="3">[ IT'S SUNETRA ]</text>
 
                     {/* Scan line gradient (horizontal sweep) */}
                     <defs>

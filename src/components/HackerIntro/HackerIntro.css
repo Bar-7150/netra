@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'VT323', monospace;
   color: #ff3366;
 }
 
@@ -170,7 +170,7 @@
 .hackedTitleWrap { margin-bottom: 20px; position: relative; }
 
 .hackedTitle {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'VT323', monospace;
   font-size: 3.5rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -277,7 +277,7 @@
   border: 1px solid #ff3366;
   color: #ff3366;
   padding: 10px 20px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'VT323', monospace;
   font-size: 12px;
   font-weight: bold;
   cursor: pointer;

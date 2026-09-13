@@ -25,11 +25,16 @@
     position: relative;
     z-index: 1;
     margin-left: 58px;
+    font-family: "JetBrains Mono", monospace;
 }
 .intro h4{
     width:30vw;
+    max-width: 560px;
     padding: 20px;
     color: #fd6195  !important;
+    font-size: clamp(0.85rem, 1.15vw, 1.05rem);
+    line-height: 1.55;
+    letter-spacing: 0.02em;
      /* color: #00ffcc !important; */
     text-shadow: 0 0 5px rgba(35, 24, 27, 0.1);
    
@@ -44,19 +49,29 @@
 }
 
 .intro h2{
-    margin:10px 20px;
+    margin: 10px 20px 18px;
     color: #ffffff;
     font-family: "JetBrains Mono", monospace;
-    letter-spacing: 2px;
+    font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+    font-weight: 600;
+    letter-spacing: 0.18em;
 }
 .cyber{
     padding: 10px;
 }
 .cyber h1{
-    font-family: "Monoton", sans-serif;
+    margin: 0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(1.75rem, 3.2vw, 3rem);
     font-weight: 400;
     font-style: normal;
+    line-height: 1.08;
+    letter-spacing: 0.04em;
     color: #ffe6ed;
+}
+.cyber h1 span {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(2.1rem, 4vw, 3.8rem) !important;
 }
 .glow-cyan {
     color: #00ffcc !important;
@@ -76,6 +91,7 @@
     color: #ff3366;
     font-family: "JetBrains Mono", monospace;
     font-weight: bold;
+    font-size: 0.8rem;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(255, 51, 102, 0.2);
     transition: all 0.3s ease;
@@ -228,13 +244,9 @@
         font-size: clamp(0.7rem, 3vw, 1rem);
         margin: 6px 0;
     }
-    .cyber h1 {
-        font-size: clamp(0.9rem, 4.5vw, 1.8rem) !important;
-    }
+    .cyber h1 { font-size: clamp(0.9rem, 4.5vw, 1.8rem) !important; }
     /* Override bold inline font-sizes on CYBER / SOLUTION / FOR YOUR SECURITY spans */
-    .cyber h1 span {
-        font-size: clamp(0.9rem, 4vw, 1.8rem) !important;
-    }
+    .cyber h1 span { font-size: clamp(0.9rem, 4vw, 1.8rem) !important; }
     .cyber { padding: clamp(2px, 0.5vw, 6px); }
     .intro h4 {
         width: 90%;

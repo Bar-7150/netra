@@ -10,7 +10,7 @@
   
   --matrix-gray: #8a6673;
   --matrix-light-gray: #d4b8c3;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'VT323', monospace;
 }
 
 :root {
@@ -22,7 +22,7 @@
   --skill-line: rgba(148, 168, 171, 0.2);
   --skill-muted: #819092;
   --skill-text: #e8f1ee;
-  --skill-mono: 'JetBrains Mono', monospace;
+  --skill-mono: 'VT323', monospace;
 }
 
 .skills-dashboard {
@@ -246,6 +246,7 @@
 
 .tool-name {
   min-width: 0;
+  font-family: 'Share Tech Mono', monospace;
   font-size: 0.68rem;
   line-height: 1.3;
 }

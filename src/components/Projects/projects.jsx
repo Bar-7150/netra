@@ -30,14 +30,7 @@ const ALL_PROJECTS = {
       tags: ['React', 'Chart.js', 'CoinGecko API'],
       link: '#',
     },
-    {
-      project: 'myDestination',
-      bg: 'myDestination.png',
-      desc: 'Modern MERN full-stack routing and geo-location service.',
-      id: 'PRJ::0x02',
-      tags: ['MERN', 'Maps API'],
-      link: '#',
-    },
+    
   
     {
       project: 'HER',
@@ -45,6 +38,14 @@ const ALL_PROJECTS = {
       desc: 'Full-stack Kanban project-management app with drag-and-drop and role-based auth.',
       id: 'PRJ::0x04',
       tags: ['Next.js', 'MongoDB', 'JWT'],
+      link: '#',
+    },
+    {
+      project: 'myDestination',
+      bg: 'myDestination.png',
+      desc: 'Modern MERN full-stack routing and geo-location service.',
+      id: 'PRJ::0x02',
+      tags: ['MERN', 'Maps API'],
       link: '#',
     },
   ],

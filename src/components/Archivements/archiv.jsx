@@ -16,7 +16,7 @@ const archiv = () => {
     // })
   return (
     <div className='archiv'>
-      <div className="leetcode">Solve 150+ DSA in leetcode</div>
+      <div className="leetcode">Solve 250+ DSA in leetcode</div>
       <div className="win">Already Hacked Multiple Devices</div>
       <div className="proj">20+ Major Project</div>
     </div>

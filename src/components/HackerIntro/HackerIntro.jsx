@@ -55,7 +55,7 @@ const HackerIntro = ({ onClose, onContactClick }) => {
       ctx.fillStyle = 'rgba(5, 0, 2, 0.05)';
       ctx.fillRect(0, 0, width, height);
       ctx.fillStyle = '#ff003c';
-      ctx.font = '14px "JetBrains Mono", monospace';
+      ctx.font = '14px "VT323", monospace';
       for (let i = 0; i < yPositions.length; i++) {
         const char = chars[Math.floor(Math.random() * chars.length)];
         ctx.fillText(char, i * 20, yPositions[i]);

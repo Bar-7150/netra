@@ -27,7 +27,7 @@
     background: #1c030e;
     border: 1px solid rgba(255, 51, 102, 0.25);
     color: #ffb3cc;
-    font-family: "JetBrains Mono", monospace;
+    font-family: 'VT323', monospace;
     text-align: center;
     box-shadow: 0 0 10px rgba(255, 51, 102, 0.05);
     transition: all 0.3s ease;
