@@ -386,7 +386,7 @@
     .projectsTabs { gap: 8px; }
     .projectsTab { font-size: 10px; padding: 6px 12px; }
     .projectsInner { left: 0; padding: 20px 16px; gap: 16px; height: 400px; }
-    .project { flex: 0 0 300px; width: 300px; height: 260px; }
+    .project { flex: 0 0 calc(100vw - 32px); width: calc(100vw - 32px); height: 260px; }
     .projectHoverContent { opacity: 1; transform: none; }
     .projectDescTerminal { font-size: 11px; margin-bottom: 10px; }
     .projectsLoadingBar { margin-bottom: 16px; }
@@ -398,9 +398,19 @@
     .projectsTabs { gap: 6px; padding: 0 10px; }
     .projectsTab { font-size: 9px; padding: 5px 10px; }
     .projectsInner { height: 370px; gap: 14px; padding: 16px 14px; }
-    .project { flex: 0 0 270px; width: 270px; height: 240px; }
+    .project { flex: 0 0 calc(100vw - 28px); width: calc(100vw - 28px); height: 240px; }
     .projectNodeTag { font-size: 11px; }
     .projectEnterBtn { padding: 6px 12px; font-size: 9px; }
+}
+
+@media (max-width: 350px) {
+    .projectsInner { padding-left: 0; padding-right: 0; }
+    .project { flex: 0 0 100vw; width: 100vw; }
+}
+
+@media (min-width: 351px) and (max-width: 768px) {
+    .projectsInner { padding-left: 16px; padding-right: 16px; }
+    .project { flex: 0 0 calc(100vw - 32px); width: calc(100vw - 32px); }
 }
 
 /* ── WIP/Locked Projects Overlay Styles ── */
